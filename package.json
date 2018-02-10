@@ -1,14 +1,14 @@
 {
-  "name": "@wertarbyte/react-props-md-table",
+  "name": "@rianbotha/react-props-md-table",
   "version": "1.0.1",
-  "description": "A markdown table generator for React component props.",
+  "description": "A markdown table generator for React component props forked from TeamWerterbyte.",
   "main": "index.js",
   "bin": {
     "props-table": "index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TeamWertarbyte/react-props-md-table.git"
+    "url": "git+https://github.com/rianbotha/react-props-md-table.git"
   },
   "keywords": [
     "react",
@@ -17,12 +17,9 @@
     "table",
     "generator"
   ],
-  "author": "Wertarbyte",
+  "author": "Rian Botha",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/TeamWertarbyte/react-props-md-table/issues"
-  },
-  "homepage": "https://github.com/TeamWertarbyte/react-props-md-table#readme",
+  "homepage": "https://github.com/rianbotha/react-props-md-table#readme",
   "dependencies": {
     "react-docgen": "^2.18.0"
   }
