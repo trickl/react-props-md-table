@@ -11,7 +11,7 @@ console.log('| Property | PropType | Required | Default | Description |');
 console.log('|----------|----------|----------|---------|-------------|');
 for (const name of Object.keys(component.props)) {
   const { type, required, description, defaultValue } = component.props[name];
-  console.log(`| ${name}$ | \`${formatType(type)}\` | ${required ? 'yes' : '-'} | ${defaultValue != null ? `\`${defaultValue.value}\`` : ''} | ${description} |`);
+  console.log(`| ${name} | \`${formatType(type)}\` | ${required ? 'yes' : ''} | ${defaultValue != null ? `\`${defaultValue.value}\`` : ''} | ${description} |`);
 }
 
 function formatType (type) {
