@@ -15,4 +15,4 @@ props-table path/to/SomeComponent.js
 ```
 
 ## Credits
-Forked from https://github.com/TeamWertarbyte/react-props-md-table
+Inspired by https://github.com/TeamWertarbyte/react-props-md-table

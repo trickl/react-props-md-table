@@ -1,7 +1,7 @@
 {
   "name": "@rianbotha/react-props-md-table",
-  "version": "1.0.2",
-  "description": "A markdown table generator for React component props forked from TeamWerterbyte.",
+  "version": "2.0.0",
+  "description": "A markdown table generator for React component props.",
   "main": "index.js",
   "bin": {
     "props-table": "index.js"
@@ -21,6 +21,6 @@
   "license": "MIT",
   "homepage": "https://github.com/rianbotha/react-props-md-table#readme",
   "dependencies": {
-    "react-docgen": "^4.0.0"
+    "react-docgen": "^4.1.0"
   }
 }
