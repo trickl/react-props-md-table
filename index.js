@@ -7,7 +7,7 @@ const argv = require('yargs')
   .boolean(['toConsole', 'force'])
   .describe('toConsole', 'Outputs props table to command line instead of readme')
   .describe('force', 'Add props table at end of file if no table is found to be replaced. A new readme.md will be created if it does not exist.')
-  .demandCommand(1)
+  .demandCommand(1, 'You need to provide a file to extract the props table from.')
   .alias('h', 'help')
   .alias('v', 'version')
   .argv
