@@ -3,7 +3,7 @@ const path = require('path');
 const buildPropsTable = require('./build-props-table');
 const writeReadme = require('./write-readme');
 const argv = require('yargs')
-  .usage('Usage: $0 <filename> [--toConsole]')
+  .usage('Usage: $0 <filename> [options]')
   .boolean(['toConsole', 'force'])
   .describe('toConsole', 'Outputs props table to command line instead of readme')
   .describe('force', 'Add props table at end of file if no table is found to be replaced. A new readme.md will be created if it does not exist.')
