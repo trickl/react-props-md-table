@@ -1,44 +1,30 @@
 #!/usr/bin/env node
-const reactDocs = require('react-docgen');
-const fs = require('fs');
 const path = require('path');
+const buildPropsTable = require('./build-props-table');
+const writeReadme = require('./write-readme');
+const argv = require('yargs')
+  .usage('Usage: $0 <filename> [--toConsole]')
+  .boolean(['toConsole', 'force'])
+  .describe('toConsole', 'Outputs props table to command line instead of readme')
+  .describe('force', 'Add props table at end of file if no table is found to be replaced. A new readme.md will be created if it does not exist.')
+  .demandCommand(1)
+  .alias('h', 'help')
+  .alias('v', 'version')
+  .argv
 
-const formatType = (type) => (
-  type.name === 'union'
-    ? type.value.map(formatType).join(' || ')
-    : type.name
-);
+const filename = argv._[0];
+const toConsole = argv.toConsole;
+const force = argv.force;
+const readme = path.dirname(filename) + '/readme.md';
+const regex = /<!-- props-table-start -->[\s\S]*<!-- props-table-end -->/m;
 
-const nlToBr = (str, addQuotes = false) => (
-  str.replace(/\r\n|\r|\n/gi, addQuotes ? '`<br>`' : '<br>')
-);
+const propsTable = buildPropsTable(filename);
 
-const filename = process.argv[process.argv.length - 1];
+if (toConsole) {
+  console.log(propsTable);
+  process.exit(1);
+}
 
-try {
-  const content = fs.readFileSync(path.resolve(process.cwd(), filename), 'utf-8');
-  const components = reactDocs.parse(content, reactDocs.resolver.findAllComponentDefinitions);
-
-  components.forEach((component) => {
-
-    const title = components.length > 1 ? `## ${component.displayName || ''} Properties` : '## Properties';
-    console.log(title);
-    console.log('');
-
-    if (component.props) {
-      console.log('| Property | PropType | Required | Default | Description |');
-      console.log('|----------|----------|----------|---------|-------------|');
-
-      for (const name of Object.keys(component.props)) {
-        const { type, required, description, defaultValue } = component.props[name];
-        console.log(`| ${name} | \`${formatType(type)}\` | ${required ? 'yes' : ''} | ${defaultValue != null ? `\`${nlToBr(defaultValue.value, true)}\`` : ''} | ${nlToBr(description)} |`);
-      }
-    } else {
-      console.log('This component has no properties');
-    }
-
-    console.log('');
-  });
-} catch (e) {
-  console.warn(`Can't extract props data from file ${filename}: ${e.message}`);
+if (propsTable) {
+  writeReadme(readme, propsTable, regex, force);
 }
