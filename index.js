@@ -21,7 +21,7 @@ const regex = /<!-- props-table-start -->[\s\S]*<!-- props-table-end -->/m;
 const propsTable = buildPropsTable(filename);
 
 if (toConsole) {
-  console.log(propsTable);
+  console.log('<!-- props-table-start -->\n' + propsTable + '<!-- props-table-end -->');
   process.exit(1);
 }
 
