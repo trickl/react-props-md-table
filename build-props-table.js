@@ -2,6 +2,7 @@ const reactDocs = require('react-docgen');
 const fs = require('fs');
 const path = require('path');
 const chalk = require('chalk');
+const stripComments = require('./strip-comments');
 const formatType = require('./format-type');
 const nlToBr = require('./nl-to-br');
 const addLine = require('./add-line');
@@ -24,7 +25,7 @@ const buildPropsTable = (filename) => {
 
         for (const name of Object.keys(component.props)) {
           const { type, required, description, defaultValue } = component.props[name];
-          propsTable = addLine(propsTable, `| ${name} | \`${formatType(type)}\` | ${required ? 'yes' : ''} | ${defaultValue != null ? `\`${nlToBr(defaultValue.value, true)}\`` : ''} | ${nlToBr(description)} |`);
+          propsTable = addLine(propsTable, `| ${name} | \`${formatType(type)}\` | ${required ? 'yes' : ''} | ${defaultValue != null ? `\`${nlToBr(stripComments(defaultValue.value), true)}\`` : ''} | ${nlToBr(description)} |`);
         }
       } else {
         propsTable = addLine(propsTable, 'This component has no properties');
