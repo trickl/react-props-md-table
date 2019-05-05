@@ -10,7 +10,7 @@ const addLine = require('./add-line');
 const buildPropsTable = (filename) => {
   try {
     const content = fs.readFileSync(path.resolve(process.cwd(), filename), 'utf-8');
-    const components = reactDocs.parse(content, reactDocs.resolver.findAllComponentDefinitions);
+    const components = reactDocs.parse(content, reactDocs.resolver.findAllExportedComponentDefinitions);
 
     let propsTable = '';
 

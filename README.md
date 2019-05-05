@@ -18,7 +18,7 @@ The props table in the file needs to be wrapped between `<!-- props-table-start 
 
 ### Options
 
-* `--toConsole` will write the props table to the terminal instead of the file.
+* `--to-console` will write the props table to the terminal instead of the file.
 * `--force` will write the props table at the end of the readme if no table wrapped by comments is found. The readme.md will be created if it doesn't exist.
 * `--help` or `-h` display usage options
 * `--version` or `-v` display version information
