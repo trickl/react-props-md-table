@@ -22,7 +22,7 @@
   "homepage": "https://github.com/rianbotha/react-props-md-table#readme",
   "dependencies": {
     "chalk": "^2.4.2",
-    "react-docgen": "^4.1.0",
+    "react-docgen": "^4.1.1",
     "yargs": "^13.2.2"
   }
 }
