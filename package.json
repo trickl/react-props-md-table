@@ -11,7 +11,7 @@
       "name": "Wertarbyte"
     }
   ],
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A markdown table generator for React component props.",
   "main": "dist/index.js",
   "type": "module",
@@ -24,7 +24,12 @@
     "url": "git+https://github.com/trickl/react-props-md-table.git"
   },
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "lint": "npm run eslint",
+    "eslint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
+    "eslint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --color --fix",
+    "eslint-rules": "eslint-find-rules .eslintrc.json --current",
+    "prettier": "prettier --single-quote --write 'src/**/*.{jsx,js,ts,tsx,scss}'"
   },
   "keywords": [
     "react",
@@ -45,6 +50,18 @@
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@types/node": "^20.3.2",
     "@types/yargs": "^17.0.24",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "eslint": "^8.43.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-find-rules": "^4.1.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-tsc": "^2.0.0",
+    "prettier": "^2.8.8",
     "rollup": "^3.26.0",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-node-externals": "^6.1.1",
