@@ -2,7 +2,8 @@ import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import typescript from "rollup-plugin-typescript2";
 import json from "@rollup/plugin-json";
-import nodeExternals from 'rollup-plugin-node-externals'
+import copy from "rolllup-plugin-copy";
+import nodeExternals from "rollup-plugin-node-externals";
 
 import packageJson from "./package.json" assert { type: "json" };
 
@@ -30,6 +31,9 @@ const rollupConfig = {
     typescript(),
     json(),
     nodeExternals(),
+    copy({
+      targets: [{ src: "scripts/**/*", dest: "dist/scripts" }],
+    }),
   ],
 };
 
