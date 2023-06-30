@@ -32,7 +32,7 @@ const rollupConfig = {
     json(),
     nodeExternals(),
     copy({
-      targets: [{ src: "scripts/**/*", dest: "dist/scripts" }],
+      targets: [{ src: "scripts/**/*", dest: "dist" }],
     }),
   ],
 };

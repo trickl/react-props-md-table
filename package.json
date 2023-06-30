@@ -11,13 +11,12 @@
       "name": "Wertarbyte"
     }
   ],
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A markdown table generator for React component props.",
   "main": "dist/index.js",
   "type": "module",
   "module": "dist/index.mjs",
   "bin": {
-    "homedir": "scripts",
     "props-table": "run.mjs"
   },
   "repository": {
