@@ -17,7 +17,7 @@
   "type": "module",
   "module": "dist/index.mjs",
   "bin": {
-    "props-table": "run.mjs"
+    "props-table": "dist/run.mjs"
   },
   "repository": {
     "type": "git",
