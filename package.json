@@ -1,14 +1,30 @@
 {
-  "name": "@rianbotha/react-props-md-table",
-  "version": "3.0.5",
+  "name": "react-props-md-table",
+  "author": "Tim Gee",
+  "license": "MIT",
+  "homepage": "https://github.com/trickl/react-props-md-table#readme",
+  "contributors": [
+    {
+      "name": "Rian Botha"
+    },
+    {
+      "name": "Wertarbyte"
+    }
+  ],
+  "version": "1.0.0",
   "description": "A markdown table generator for React component props.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "type": "module",
+  "module": "dist/index.mjs",
   "bin": {
-    "props-table": "index.js"
+    "props-table": "dist/index.mjs"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rianbotha/react-props-md-table.git"
+    "url": "git+https://github.com/trickl/react-props-md-table.git"
+  },
+  "scripts": {
+    "build": "rollup -c"
   },
   "keywords": [
     "react",
@@ -17,12 +33,21 @@
     "table",
     "generator"
   ],
-  "author": "Rian Botha",
-  "license": "MIT",
-  "homepage": "https://github.com/rianbotha/react-props-md-table#readme",
   "dependencies": {
-    "chalk": "^2.4.2",
-    "react-docgen": "^4.1.1",
-    "yargs": "^13.2.2"
+    "chalk": "^5.3.0",
+    "react-docgen": "^6.0.1",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.22.5",
+    "@rollup/plugin-commonjs": "^25.0.2",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@types/node": "^20.3.2",
+    "@types/yargs": "^17.0.24",
+    "rollup": "^3.26.0",
+    "rollup-plugin-node-externals": "^6.1.1",
+    "rollup-plugin-typescript2": "^0.35.0",
+    "typescript": "^5.1.6"
   }
 }
