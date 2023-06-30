@@ -5,7 +5,7 @@ This tiny tool uses [react-docgen][] to generate markdown tables of the props of
 
 ## Installation
 ```
-npm i --save-dev react-props-md-table
+npm i -g react-props-md-table
 ```
 
 ## Usage
