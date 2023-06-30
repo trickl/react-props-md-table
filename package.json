@@ -1,5 +1,5 @@
 {
-  "name": "react-props-md-table",
+  "name": "@trickl/react-props-md-table",
   "author": "Tim Gee",
   "license": "MIT",
   "homepage": "https://github.com/trickl/react-props-md-table#readme",
@@ -11,7 +11,7 @@
       "name": "Wertarbyte"
     }
   ],
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A markdown table generator for React component props.",
   "main": "dist/index.js",
   "type": "module",
